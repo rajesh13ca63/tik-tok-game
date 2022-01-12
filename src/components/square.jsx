@@ -1,13 +1,13 @@
 import React from "react";
 
 class Square extends React.Component {
-    constructor(props) {
-        super(props);
-        this.var = 0;
-        this.state = {
-            value: null
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.var = 0;
+    //     this.state = {
+    //         value: null
+    //     }
+    // }
     
 
     render() {
@@ -15,8 +15,9 @@ class Square extends React.Component {
         return (
             <div>
                 <button className="square" 
-                onClick={()=> this.setState({value: 'X'})}
-                >{this.state.value}</button>
+                    onClick={()=> this.props.onClick()}
+                    >{this.props.value}
+                </button>
             </div>
         )
     }
