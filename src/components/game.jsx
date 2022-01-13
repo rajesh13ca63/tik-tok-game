@@ -2,7 +2,6 @@ import React from "react";
 import Board from "./boarder";
 
 class Game extends React.Component {
-    
     render() {
         return (
             <div className="game">
