@@ -25,13 +25,12 @@ class Board extends React.Component {
     }
 
     clearBoardData() {
-        console.log('Clear Data method called');
+        console.log('Clear Board Data method called');
         this.setState({
             squares : [],
             xIsnext: true
         });
-    }
-
+    }  
 
   
     render() {
@@ -40,7 +39,6 @@ class Board extends React.Component {
         if(winner) {
             status = 'Winner : '+ (winner);
         } else {
-            console.log("Winner else:", winner)
             status = 'Next Player:' + (this.state.xIsnext ? 'X' : 'O');
         }
         return (
@@ -64,7 +62,7 @@ class Board extends React.Component {
 
                 <div className="clearbtn">
                     <button className="btn btn-warning btn-sm"
-                    onClick={this.clearBoardData}
+                    onClick={()=>this.clearBoardData()}
                     >Clear</button>
                 </div>
             </div>
