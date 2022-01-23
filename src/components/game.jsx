@@ -1,6 +1,7 @@
 import React from "react";
 import Board from "./boarder";
 import Header from "./header";
+import Footer from "./footer";
 
 class Game extends React.Component {
     render() {
@@ -17,6 +18,9 @@ class Game extends React.Component {
                     <div className="game-info"> 
                     
                     </div>
+                </div>
+                <div>
+                    <Footer />
                 </div>
             </div>
         )
