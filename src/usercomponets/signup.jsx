@@ -9,8 +9,7 @@ class Signup extends React.Component {
             lastname: '',
             email: '',
             mobileno: '',
-            topic: ""
-            
+            topic: "react",
         }
         
     }
@@ -52,6 +51,9 @@ class Signup extends React.Component {
         event.preventDefault();
         console.log(event.target[0].value);
         console.log(this.state.firstname);
+        if(!this.state.firstname) {
+            alert("Please enter first name")
+        }
     }
 
     render() {
@@ -62,6 +64,7 @@ class Signup extends React.Component {
                         <label className="">First Name</label>
                         <div className="col-md-4">
                             <input type="text" className="form-control"
+                            placeholder="Enter First Name"
                             value={this.state.firstname}
                             onChange={this.handleUserfirstnameChange}>
                             </input>
@@ -69,6 +72,7 @@ class Signup extends React.Component {
                         <label className="">Last Name</label>
                         <div className="col-md-4">
                             <input type="text" className="form-control"
+                            placeholder="Enter Last Name"
                             value={this.state.lastname}
                             onChange={this.handUserlastnameChange}
                             ></input>
@@ -77,6 +81,7 @@ class Signup extends React.Component {
                            <label>Email</label>
                            <div className="col-md-4">
                             <input type="text" className="form-control"
+                            placeholder="Enter email id"
                             value={this.state.email}
                             onChange={this.handEmailChange}
                             ></input>
@@ -86,6 +91,7 @@ class Signup extends React.Component {
                            <label>Mobile No</label>
                            <div className="col-md-4">
                                <input type="text" className="form-control" 
+                               placeholder="Enter Mobile No"
                                value={this.state.mobileno}
                                onChange={this.handleMobilenoChange}
                                />

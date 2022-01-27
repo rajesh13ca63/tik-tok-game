@@ -16,6 +16,9 @@ function Header() {
                             <li className="nav-item">
                                 <Link to="/disable" className="nav-link">Disabled</Link>
                             </li>
+                            <li>
+                                <Link to="/count" className="nav-link">Counter</Link>
+                            </li>
                         </ul>
                     </div>
 
