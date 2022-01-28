@@ -9,6 +9,7 @@ import {
     Navigate
 } from 'react-router-dom';
 import Count from "../countercomponents/count";
+import Longin from "../usercomponets/login";
 
 class App extends Component {
     render() {
@@ -23,9 +24,10 @@ class App extends Component {
                     <Route path="game" element={<Game />} />
                     <Route path="signup" element={<Signup />} />
                     <Route path="count" element={<Count />} />
+                    <Route path="login" element={<Longin />} />  
                     
                     <Route path="*" element={
-                    <main style={{padding: "1rem" }, {color: "red"} }>
+                    <main style={{padding: "1rem", color: "red"} }>
                         <p>There's nothing here!</p>
                     </main>
                     } />

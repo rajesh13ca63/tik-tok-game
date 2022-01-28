@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
 const Counter = (props) => {
-   
-    const [currentCounter, setCurrentCounter] = useState(0);
+    const initialCount = 0;
+    const [currentCounter, setCurrentCounter] = useState(initialCount);
 
     const handleCount = (event) => {
         if(props.incrementBy)
@@ -10,7 +10,7 @@ const Counter = (props) => {
         else
             setCurrentCounter(currentCounter+1);
     }
-
+    
     const buttonStyle = {
         background: props.buttonColor,
         borderRadius: props.borderRadius

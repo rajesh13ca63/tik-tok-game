@@ -1,4 +1,3 @@
-import Counter from "../countercomponents/counter";
 
 function About() {
     return (
