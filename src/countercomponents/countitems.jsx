@@ -11,8 +11,6 @@ const CountItems = () => {
             ]);
             setItem('');
         }
-       
-
     }
 
     const olSytle = {
@@ -37,7 +35,7 @@ const CountItems = () => {
                 onClick={addItems}
                 >Add Item</button>
             </div>
-            <div>
+            {items.length>0 && <div>
                 <h3>Items List</h3>
                 {/* <ol>
                    {items.map((item, index)  => {
@@ -49,7 +47,7 @@ const CountItems = () => {
                         <li key={item.id  } id={item.id} style={liStyle}>{item.value}</li>
                     ))}
                 </ol>
-            </div>
+            </div> }
         </div>
     );
 }
