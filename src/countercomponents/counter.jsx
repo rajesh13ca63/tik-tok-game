@@ -17,13 +17,14 @@ const Counter = (props) => {
     }
 
     return (
-        <div style={{ margin: "10px" } }>
-            <span>{currentCounter}</span>
-            <button style={buttonStyle}
-            onClick={handleCount}
-            >+{ props.incrementBy ? props.incrementBy : '1'}</button>
-            <span> By { props.incrementBy ? props.incrementBy : '1'}  </span>
-
+        <div className="container">
+            <div className="col col-md-6" style={{ margin: "10px" }  }>
+                <span>{currentCounter}</span>
+                <button style={buttonStyle}
+                onClick={handleCount}
+                >+{ props.incrementBy ? props.incrementBy : '1'}</button>
+                <span> By { props.incrementBy ? props.incrementBy : '1'}  </span>
+            </div>
         </div>
     )
 }
