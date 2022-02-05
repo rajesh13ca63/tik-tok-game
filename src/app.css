@@ -66,3 +66,16 @@
   .social-media {
       float: right;
   }
+
+  .serch-text-name {
+    width: 250px;
+    height: 40px;
+    border-radius: 35px;
+    border-color: crimson;
+    text-align: center;
+  }
+
+  .search-text-div {
+    padding: 5px;
+    text-align: center;
+  }
