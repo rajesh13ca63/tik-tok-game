@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import Count from "../countercomponents/count";
 import Longin from "../usercomponets/login";
+import Users from "../userlistcomponents/users";
 
 class App extends Component {
     render() {
@@ -25,6 +26,7 @@ class App extends Component {
                     <Route path="signup" element={<Signup />} />
                     <Route path="count" element={<Count />} />
                     <Route path="login" element={<Longin />} />  
+                    <Route path="users" element={<Users />} />
                     
                     <Route path="*" element={
                     <main style={{padding: "1rem", color: "red"} }>

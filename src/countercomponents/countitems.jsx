@@ -7,10 +7,15 @@ const CountItems = () => {
     const addItems = (event) => {
         if(item) {
             setItems([...items,
-                {id: items.length, value: item} 
+                {id: 'id' + (new Date()).getTime(), value: item} 
             ]);
             setItem('');
         }
+    }
+
+    const deletItem = (item) => {
+        const newTodos = items.filter((todo, i) => todo.id !== item.id);
+        setItems(newTodos);
     }
 
     const olSytle = {
@@ -43,9 +48,14 @@ const CountItems = () => {
                    } )}
                 </ol> */}
                 <ol style={olSytle}>
-                    {items.map(item => (
-                        <li key={item.id  } id={item.id} style={liStyle}>{item.value}</li>
-                    ))}
+                    {items.map(item => {
+                       return ( 
+                           <div key={item.id}>
+                                <li key={item.id } style={liStyle}>{item.value}</li>
+                                <span><button onClick={(e) => deletItem(item)}>X</button></span>
+                            </div>
+                        )
+                    })}
                 </ol>
             </div> }
         </div>
