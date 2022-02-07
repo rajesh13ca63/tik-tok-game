@@ -1,18 +1,24 @@
 import React from "react";
+import Clock from "../timecomponents/clock";
 import Board from "./boarder";
-import Header from "./header";
-import Footer from "./footer";
 
 class Game extends React.Component {
     render() {
         return (
             <div>
-                <div className="game">
-                    <div className="game-board"> 
-                        <Board />
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="game">
+                            <div className="game-board"> 
+                                <Board />
+                            </div>
+                            <div className="game-info"> 
+                            
+                            </div>
+                        </div>
                     </div>
-                    <div className="game-info"> 
-                    
+                    <div className="col-md-6">
+                        <Clock />
                     </div>
                 </div>
             </div>

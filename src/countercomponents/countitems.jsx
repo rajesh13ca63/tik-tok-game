@@ -13,9 +13,16 @@ const CountItems = () => {
         }
     }
 
-    const deletItem = (item) => {
-        const newTodos = items.filter((todo, i) => todo.id !== item.id);
+    const deletItem = (id) => {
+        const newTodos = items.filter((todo, index) => (
+            todo.id !== id
+            ));
         setItems(newTodos);
+    }
+
+    const editItem = (item) =>{
+        console.log('Edit button clicked', item);
+
     }
 
     const olSytle = {
@@ -31,13 +38,15 @@ const CountItems = () => {
     return (
         <div>
             <h2>hellow items</h2>
-            <input type="text" 
-            value={item}
-            onChange={e => setItem(e.target.value)}
-            />
+            <div>
+                <input type="text" 
+                value={item}
+                onChange={(e) => setItem(e.target.value)}
+                />
+            </div>
             <div>
                 <button type="button" className="btn btn-primary" style={{margin: "10px"} } 
-                onClick={addItems}
+                disabled={!item} onClick={addItems}
                 >Add Item</button>
             </div>
             {items.length>0 && <div>
@@ -52,7 +61,8 @@ const CountItems = () => {
                        return ( 
                            <div key={item.id}>
                                 <li key={item.id } style={liStyle}>{item.value}</li>
-                                <span><button onClick={(e) => deletItem(item)}>X</button></span>
+                                <span><button onClick={(e) => deletItem(item.id)}>X</button></span>
+                                <span><button onClick={(e) => editItem(item)}>Edit</button></span>
                             </div>
                         )
                     })}

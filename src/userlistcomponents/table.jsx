@@ -1,19 +1,8 @@
 import React, {Component} from "react";
 import TableHeader from "./tableheader";
 import TableBody from "./tablebody";
-
-// const columnLists = [
-//     {id: 1, name: 'Name', job: 'Profile'}
-// ]
-
-// const usersLists = [
-//     columnLists = [{id: 1, name: 'Name', job: 'Profile'}],
-//     {id: 1, name: 'Rajesh Gupta', job: 'Software Engineer'},
-//     {id: 2, name: 'Charlie', job: 'Janitor'},
-//     {id: 3, name: 'Mac', job: 'Bouncer'},
-//     {id: 4, name: 'Dee', job: 'Aspiring actress'},
-//     {id: 5, name: 'Dennis', job: 'Bartender' }
-// ]
+import Clock from "../timecomponents/clock";
+import WarningBanner from "./warningbanner";
 
 const tableData = {
     columnLists: [{id: 1, name: 'Name', job: 'Profile'}],
@@ -29,8 +18,17 @@ class Table extends Component {
         super(props);
         this.state = {
             searchName: '',
-            filterUserList: []
-        }
+            filterUserList: [],
+            showWarning: true
+        };
+        this.handleToggleClick = this.handleToggleClick.bind(this);
+    }
+
+    handleToggleClick() {
+        console.log('handle toggle click callded');
+        this.setState({
+            showWarning: false
+        });
     }
 
     clickHandle = (event) => {
@@ -52,6 +50,15 @@ class Table extends Component {
                     value={this.state.searchName} 
                     onChange={this.clickHandle}
                     />
+                </div>
+                <div>
+                   { filterUserList.length <=0 && <WarningBanner warn={this.state.showWarning}
+                    onClick={this.handleToggleClick}
+                    />
+                    }
+                </div>
+                <div>
+                    <Clock />
                 </div>
                 <table className="table">
                     <TableHeader columnLists={tableData.columnLists} />

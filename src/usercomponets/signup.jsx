@@ -10,15 +10,15 @@ class Signup extends React.Component {
             email: '',
             mobileno: '',
             topic: "react",
-        }
-        
+            firstNameError: false
+        }    
     }
 
     topics= ['angularjs', 'react', 'javascript', 'viewjs'];
 
     handleUserfirstnameChange= (event) => {
        this.setState({
-           firstname: event.target.value
+           firstname: event.target.value, firstNameError: false
        });
     }
 
@@ -52,7 +52,9 @@ class Signup extends React.Component {
         console.log(event.target[0].value);
         console.log(this.state.firstname);
         if(!this.state.firstname) {
-            alert("Please enter first name")
+            this.setState({
+                firstNameError: true
+            });
         }
     }
 
@@ -68,6 +70,7 @@ class Signup extends React.Component {
                             value={this.state.firstname}
                             onChange={this.handleUserfirstnameChange}>
                             </input>
+                            {this.state.firstNameError && <div style={{color: "red"}}>Enter First Name</div>}
                         </div>
                         <label className="">Last Name</label>
                         <div className="col-md-4">
@@ -80,7 +83,7 @@ class Signup extends React.Component {
                        <div className="form-group row">
                            <label>Email</label>
                            <div className="col-md-4">
-                            <input type="text" className="form-control"
+                            <input type="email" className="form-control"
                             placeholder="Enter email id"
                             value={this.state.email}
                             onChange={this.handEmailChange}
@@ -102,11 +105,14 @@ class Signup extends React.Component {
                            <div className="col-md-4">
                                 <select value={this.state.topic}
                                 onChange={this.handleTopics}>
-                                   {/* <option value={this.state.topic}>-select-</option> */}
-                                    <option value={this.topics[0]}>Angular</option>
+                                    {/* <option key={this.state.topic}>-select-</option> */}
+                                    {/* <option value={this.topics[0]}>Angular</option>
                                     <option value={this.topics[1]}>React Js</option>
                                     <option value={this.topics[2]}>Javascript</option>
-                                    <option value={this.topics[3]}>ViewJs</option>
+                                    <option value={this.topics[3]}>ViewJs</option> */}
+                                    {this.topics.map(topic =>(
+                                        <option key={topic}>{topic}</option>
+                                    ))}
                                </select>
                            </div>
                        </div>

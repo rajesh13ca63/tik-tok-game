@@ -1,4 +1,5 @@
 import { useState } from "react/cjs/react.development";
+import ListItem from "./listitem";
 
 const SearchBar = (props) => {
     const [searchItem, setSearchItem] = useState('');
@@ -8,7 +9,10 @@ const SearchBar = (props) => {
     const filterProductList = allProductList.filter(product => (
         product.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())
     ));
-    
+    const searchList = filterProductList.map(product => (
+        <ListItem key={product} value={product} />
+    ));
+
     return (
         <div>
             <h3>Search Items</h3>
@@ -18,13 +22,9 @@ const SearchBar = (props) => {
             <div>
                 <h2>Search Value {searchItem}</h2>
                 <ul>
-                    {filterProductList.map(product => (
-                        <li key={product}>{product}</li>
-                    ))}
+                    {searchList}
                 </ul>
-
-            </div>
-            
+            </div>          
         </div>
     )
 }
