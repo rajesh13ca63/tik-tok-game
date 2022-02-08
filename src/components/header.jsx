@@ -22,6 +22,9 @@ function Header() {
                             <li>
                                 <Link to="/users" className="nav-link">Users</Link>
                             </li>
+                            <li>
+                                <Link to="/temperature" className="nav-link">Temperature</Link>
+                            </li>
                         </ul>
                     </div>
 

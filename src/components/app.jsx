@@ -11,6 +11,7 @@ import {
 import Count from "../countercomponents/count";
 import Longin from "../usercomponets/login";
 import Users from "../userlistcomponents/users";
+import Calculator from "../tempcomponents/calculator";
 
 class App extends Component {
     render() {
@@ -27,6 +28,7 @@ class App extends Component {
                     <Route path="count" element={<Count />} />
                     <Route path="login" element={<Longin />} />  
                     <Route path="users" element={<Users />} />
+                    <Route path="temperature" element={<Calculator />} />
                     
                     <Route path="*" element={
                     <main style={{padding: "1rem", color: "red"} }>

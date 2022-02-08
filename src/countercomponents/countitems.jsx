@@ -61,8 +61,8 @@ const CountItems = () => {
                        return ( 
                            <div key={item.id}>
                                 <li key={item.id } style={liStyle}>{item.value}</li>
-                                <span><button onClick={(e) => deletItem(item.id)}>X</button></span>
-                                <span><button onClick={(e) => editItem(item)}>Edit</button></span>
+                                <span><button onClick={(e) => deletItem(item.id)} >X</button></span>
+                                <span><button onClick={(e) => editItem(item)} >Edit</button></span>
                             </div>
                         )
                     })}
