@@ -23,7 +23,16 @@ function Header() {
                                 <Link to="/users" className="nav-link">Users</Link>
                             </li>
                             <li>
-                                <Link to="/temperature" className="nav-link">Temperature</Link>
+                                <Link to="/tccalculator" className="nav-link">Converter</Link>
+                            </li>
+                            <li>
+                                <Link to="/adduser" className="nav-link">Add Users</Link>
+                            </li>
+                            <li>
+                                <Link to="/products" className="nav-link">Product List</Link>
+                            </li>
+                            <li>
+                                <Link to="mainsearch" className="nav-link">Search</Link>
                             </li>
                         </ul>
                     </div>
@@ -33,7 +42,8 @@ function Header() {
                             <Link to="/signup" className="nav-link">Sign up</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/login" className="nav-link">Login</Link>
+                            {/* <Link to="/login" className="nav-link">Login</Link> */}
+                            <Link to="/login" className="btn btn-success">Login</Link>
                         </li>
                     </ul>
                 </nav>

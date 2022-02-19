@@ -11,7 +11,10 @@ import {
 import Count from "../countercomponents/count";
 import Longin from "../usercomponets/login";
 import Users from "../userlistcomponents/users";
-import Calculator from "../tempcomponents/calculator";
+import TcCalculator from "../tempcomponents/tccalculator";
+import DynamicInput from "../DynamicComponents/DynamicInput";
+import ProductListFunction from "../HttpsComponents/ProductListFunction";
+import MainSearch from "../SearchComponents/MainSearch";
 
 class App extends Component {
     render() {
@@ -28,7 +31,10 @@ class App extends Component {
                     <Route path="count" element={<Count />} />
                     <Route path="login" element={<Longin />} />  
                     <Route path="users" element={<Users />} />
-                    <Route path="temperature" element={<Calculator />} />
+                    <Route path="tccalculator" element={<TcCalculator />} />
+                    <Route path="adduser" element={<DynamicInput />} />
+                    <Route path="products" element={<ProductListFunction />} />
+                    <Route path="mainsearch" element={<MainSearch />}/>
                     
                     <Route path="*" element={
                     <main style={{padding: "1rem", color: "red"} }>

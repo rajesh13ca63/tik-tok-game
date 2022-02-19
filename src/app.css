@@ -79,3 +79,13 @@
     padding: 5px;
     text-align: center;
   }
+
+  .card-deck .card {
+    flex-basis: 100%;
+}
+
+@media (min-width: 992px) {
+    .card-deck .card {
+        flex-basis: calc(25% - 30px); /* #{$grid-gutter-width} */
+    }
+}

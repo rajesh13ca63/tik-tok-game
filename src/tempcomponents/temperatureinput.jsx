@@ -21,10 +21,13 @@ class TemperatureInput extends Component {
                 
         return (
             <>  
-                <label>Enter Temperature in {scaleName[scale]}:</label>
-                <input type="text" value={temperature}
-                onChange={this.handleChange} />
-               
+                <div className="form-group" style={{margin: "1rem"}}>
+                    <label style={{color:"green"}}>Enter Temperature in {scaleName[scale]}:</label>
+                    <div className="">
+                        <input type="number" value={temperature}
+                        onChange={this.handleChange} />
+                    </div>
+                </div>
             </>
         )
     }
