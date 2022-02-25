@@ -39,7 +39,7 @@ const DynamicInput = () => {
                 <span><label>Action</label></span>
                 <form onSubmit={submitInputData}>
                     { inputFields.map((inputField, index) => {
-                        return <div key={index}>
+                        return (<div key={index}>
                             <div className="form-group row" style={{margin: "10px"}}>
                                 <div className="col-md-4">
                                     <label>Name</label>
@@ -56,7 +56,7 @@ const DynamicInput = () => {
                                     onClick={() => deleteInputFiled(index)}>Remove</button>
                                 </div>
                             </div>
-                        </div>
+                        </div>)
                     })}
                     <button className="btn btn-success btn-sm" style={{marginLeft:"5rem"}}
                     onClick={addMoreField}>Add More...</button>
