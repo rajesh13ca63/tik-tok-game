@@ -15,6 +15,8 @@ import TcCalculator from "../tempcomponents/tccalculator";
 import DynamicInput from "../DynamicComponents/DynamicInput";
 import ProductListFunction from "../HttpsComponents/ProductListFunction";
 import MainSearch from "../SearchComponents/MainSearch";
+import Assignment from "../AssignmentComponents/Assignment";
+import ParentComponent from "../ContextComponents/ParentComponent";
 
 class App extends Component {
     render() {
@@ -35,6 +37,8 @@ class App extends Component {
                     <Route path="adduser" element={<DynamicInput />} />
                     <Route path="products" element={<ProductListFunction />} />
                     <Route path="mainsearch" element={<MainSearch />}/>
+                    <Route path="context" element={<ParentComponent />} />
+                    <Route path="assignment" element={<Assignment/>} />
                     
                     <Route path="*" element={
                     <main style={{padding: "1rem", color: "red"} }>

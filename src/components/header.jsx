@@ -34,6 +34,12 @@ function Header() {
                             <li>
                                 <Link to="mainsearch" className="nav-link">Search</Link>
                             </li>
+                            <li>
+                                <Link to="/context" className="nav-link">Context</Link>
+                            </li>
+                            <li>
+                                <Link to="/assignment" className="nav-link">Assignment</Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -48,9 +54,9 @@ function Header() {
                     </ul>
                 </nav>
                 <Outlet />
-                <div className="footer">
+                {/* <div className="footer">
                     <Footer />
-                </div>
+                </div> */}
             </div>
         );
 }
