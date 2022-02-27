@@ -116,3 +116,15 @@
   .display-none {
     display: none;
   }
+
+  tr:nth-child(even):hover {
+    background-color: burlywood;
+  }
+
+  tr:nth-child(odd):hover {
+    background-color: burlywood;
+  }
+
+  tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }

@@ -1,0 +1,8 @@
+select {
+    color: rosybrown;
+}
+
+select option { color: rgb(172, 27, 27); }
+    select option:first-child{
+    color: green;
+}

@@ -4,6 +4,7 @@ import OpenModal from "./OpenModal";
 const AssignmentTableBody = (props) =>{
     const [show, setShow] = useState(false);
     const [imgName, setImgName] = useState('');
+    const [showQuestion, setShowQuestion] = useState(false);
 
     const handleDelete = (id) => {
         console.log('Inside delete method', id);
@@ -26,14 +27,26 @@ const AssignmentTableBody = (props) =>{
         console.log('Hide modal called');
     }
 
+    const handleShowCheckbox = (event) => {
+        // const target = event.target;
+        // console.log('target.checked', target.checked);
+        // console.log('target.value', target.value);
+        // const value = target.type === 'checkbox' ? target.checked : target.value;
+        
+        setShowQuestion(event.target.checked);
+        console.log('event.target.checked', event.target.checked);
+    }
+
     return(
         <>
             { props.assignments.length>=1 ? props.assignments.map(list =>(
                 <tr key={list.id}>
-                    <th >{list.sclass}</th>
-                    <th >{list.subject}</th>
-                    <th >{list.question.substring(0, 30) + '...'}</th>
-                    <th >
+                    <th ><div><input type="checkbox" name="showQuestion" checked={showQuestion} id={list.id}
+                    onChange={(event) => handleShowCheckbox(event)}/></div></th>
+                    <td >{list.sclass}</td>
+                    <td >{list.subject}</td>
+                    <td >{list.question.substring(0, 30) + '...'}</td>
+                    <td >
                     <span>
                         <OpenModal show={show} handleClose={hideModal}>
                             <p style={{textAlign: 'center', color:'red'}}>Scaned Grade Card</p>
@@ -41,13 +54,13 @@ const AssignmentTableBody = (props) =>{
                         </OpenModal>
                         <button className="btn btn-sm btn-primary"
                     onClick={() =>handleScanedGradeCard(list.filePath)}>Scaned</button>
-                    </span></th>
-                    <th >
+                    </span></td>
+                    <td >
                         <span><button className="btn btn-success btn-sm"
                         onClick={() => handleEdit(list.id)}>Edit</button></span>
                         <span><button className="btn btn-danger btn-sm" style={{marginLeft:"5px"}}
                         onClick={() => handleDelete(list.id)}>delete</button></span>
-                    </th>
+                    </td>
                 </tr>
             )) : <tr><th>No Record Found</th></tr> }
         </> 

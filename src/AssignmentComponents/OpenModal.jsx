@@ -1,6 +1,5 @@
 const OpenModal = ({handleClose, show, children}) => {
     const showHideClassName = show ? 'display-block' : 'display-none';
-    console.log('show', show);
     return (
         <div className={showHideClassName}>
             <section className="modal-main">

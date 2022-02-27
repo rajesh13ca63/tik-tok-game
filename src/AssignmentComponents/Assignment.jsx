@@ -22,7 +22,7 @@ const subjectLists= [
     
 ];
 
-const tableColumns= ['Course', 'Department', 'Questions', 'Grade Card'];
+const tableColumns= ['#Serial', 'Course', 'Department', 'Questions', 'Grade Card'];
 
 const Assignment = (props) => {
     const [studentClassName, setStudentClassName]= useState(classLists[5]);
@@ -58,6 +58,7 @@ const Assignment = (props) => {
                             };
             updateData[index] = tempData;
             setAssignments(updateData);
+            setIsEdit(false);
             setWarningSuccessMsg('Data Updated Successfully');
         } else {
             const data = { 'id': (new Date()).getTime(),

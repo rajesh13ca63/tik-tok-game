@@ -1,4 +1,4 @@
-import { createRef, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import ChildComponent from "./ChildComponent";
 import { CounterProvider } from "./CountContext";
 
@@ -16,7 +16,6 @@ const ParentComponent = () => {
 
     const handleMouseMove = (event) => {
         console.log('mouse move');
-        const val = {x: event.clientX, y: event.clientY};
         setAxis({x: event.clientX, y: event.clientY});
     }
     
